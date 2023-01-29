@@ -14,13 +14,13 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (percent == String) {
+  if (typeof(percent) === "string") {
     percent = +percent;
-  } else if (contribution == String) {
+  } else if (typeof(contribution) === "string") {
     contribution = +contribution;
-  } else if (amount == String) {
+  } else if (typeof(amount) === "string") {
     amount = +amount;
-  } else if (countMonths == String) {
+  } else if (typeof(countMonths) === "string") {
     countMonths = +countMonths;
   }
   if (isNaN(percent)|| isNaN(contribution) || isNaN(amount
