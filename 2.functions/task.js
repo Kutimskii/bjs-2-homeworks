@@ -5,7 +5,7 @@ if (arr.length === 0) {
 let min = arr[0];
 let max = arr[0];
 let sum = 0;
-for (let i=0;i<arr.length;i++) {
+for (let i = 0;i<arr.length;i++) {
   if (arr[i] < min){
     min = arr[i]; 
   }
@@ -43,7 +43,7 @@ function differenceEvenOddWorker(...arr) {
   }
 let sumEvenElement = 0;
 let sumEOddElement = 0;
-for (i=0;i<arr.length;i++) {
+for (let i = 0;i<arr.length;i++) {
   if (arr[i] % 2) {
     sumEOddElement += arr[i];
   } else {
@@ -59,7 +59,7 @@ if (arr.length === 0) {
 }
 let sumEvenElement = 0;
 let countEvenElement = 0;
-for (i=0;i<arr.length;i++) {
+for (let i = 0;i < arr.length;i++) {
     if (!(arr[i] % 2)) {
       sumEvenElement += arr[i];
       countEvenElement++
