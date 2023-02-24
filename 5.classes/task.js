@@ -92,7 +92,7 @@ class Student {
     this.marks = {};
   }
   addMark (mark,subject){
-    if (mark < 2 && mark > 5) {
+    if (mark < 2 || mark > 5) {
       return;
     }
     if ([subject] in this.marks) {
@@ -103,8 +103,8 @@ class Student {
       }
     }
   getAverageBySubject(subject){
-    if (![subject] in this.marks) {
-      return;
+    if (!(subject in this.marks)) {
+      return 0;
     }
     return this.marks[subject].reduce((acc, item, index, arr) => { 
       acc+=item;
@@ -117,6 +117,9 @@ class Student {
   getAverage(){
     let keysArr = Object.keys(this.marks);
     let sum = 0;
+    if (keysArr.length === 0) {
+      return 0;
+    }
     for (let i = 0; i < keysArr.length; i++) {
       sum += this.getAverageBySubject(keysArr[i])
     }
