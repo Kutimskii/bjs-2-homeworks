@@ -34,6 +34,7 @@ class Triangle {
     return +result.toFixed(3);
   }
 }
+
 function getTriangle(a,b,c) {
   try {
     return new Triangle(a,b,c)
