@@ -65,26 +65,16 @@ class Library {
     }
   }
   findBookBy(type, value) {
-  let result = null;
-  this.books.find(el => {
-    if (el[type] === value) {
-      result = el;
-    } 
-  }
-  )  
-  return result;
-  }
-  giveBookByName(bookName) {
-    let result = null;
-    this.books.find(el => {
-      if (el.name === bookName) {
-        result = el;
-        let index = this.books.indexOf(el,0)
-        this.books.splice(index, 1);
-      }
-    })  
-    return result;
-  }
+    const findResult = this.books.find((item) => item[type] === value);
+    return findResult || null;
+   }
+   
+   giveBookByName(bookName) {
+     const book = this.findBookBy("name", bookName);
+     if (!book) return null;
+     this.books = this.books.filter((item) => item.name !== bookName);
+     return book;
+   }
 }
 class Student {
   constructor(name) {
@@ -124,5 +114,8 @@ class Student {
       sum += this.getAverageBySubject(keysArr[i])
     }
     return sum / keysArr.length;
+  }
+  getCurrentFormattedTime(){
+    return String(time)
   }
 }
